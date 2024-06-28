@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form action="/submit_feedback" method="POST">
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required><br><br>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea><br><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form action="/submit_feedback" method="POST">
+        <input type="hidden" name="user_id" value="<%= user_id %>">
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea><br><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</body>
+</html>

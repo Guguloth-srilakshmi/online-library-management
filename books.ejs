@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>viewing books</title>
+    <style type="text/css" rel="stylesheet">
+        h1{
+            text-align: center;
+            font-size:30px;
+        }
+        .some button{
+            position:absolute;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color: darkgreen;
+            color:white;
+            padding:10px;
+            border-radius: 10px;
+
+        }
+        .some button:hover{
+            background-color: hotpink;
+            color:white;
+        }
+        table{
+            background-color: darkgreen;
+            color:white;
+            
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+            padding:20px;
+            margin:10px;
+            background-color: aqua;
+        }
+        table tr.row{
+            color:yellow;
+            font-size: 20px;
+        }
+        table tr th a{
+            color:orange;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>AVAILABLE BOOKS</h1>
+    <table border="1" width="100%" cellpadding="5">
+        <tr class="row">
+            <th align="center">Book_Id</th>
+            <th align="center">Book_Title</th>
+            <th align="center">Book_Author</th>
+            <th align="center">Book_Prize</th>
+            <th align="center">Book_Quantity</th>
+            <th align="center">Action</th>
+        </tr>
+        <% if(some.length>0) {%>
+            <% for(i=0;i<some.length;i++){ %>
+                <tr>
+                    <th align="left"><%-some[i].book_id %></th>
+                    <th align="left"><%-some[i].book_title%></th>
+                    <th align="left"><%-some[i].book_author%></th>
+                    <th align="left"><%-some[i].book_prize%></th>
+                    <th align="left"><%-some[i].book_quantity>0 ? some[i].book_quantity :0%></th>
+                    <th>
+                        <a href="/update_book?book_id=<%- some[i].book_id %>">update</a>&nbsp
+                        <a href="/delete_book?book_id=<%- some[i].book_id %>">delete</a>
+                    </th>
+                    
+
+                </tr>
+                <% } %>
+        <% }else{ %>
+            <h1>data not found</h1>
+        <% } %>
+    </table>
+    </br>
+    </br>
+    <div class="some">
+        <form action="inserting_books.html">
+            <button>Add One</button>
+        </form>
+    </div>
+        
+    
+    
+</body>
+</html>
+

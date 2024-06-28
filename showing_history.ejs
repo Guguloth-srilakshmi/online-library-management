@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>showing History</title>
+    <style type="text/css" rel="stylesheet">
+         body{
+            font-family:'Brush Script MT', cursive;
+            background-color: #E3E3E3;
+        }
+        .head{
+            font-size: 25px;
+            text-align:center;
+            color:red;
+            
+        }
+        .browse{
+            position:absolute;
+            top:19%;
+            padding:5px 10px;
+            left:90%;
+            transform: translate(-50%,-50%);
+            
+        }
+        .browse button{
+            color:white;
+            background-color: green;
+            border-radius:6px;
+            padding:6px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>HISTORY</h1>
+    </div>
+    <table width="100%" border="1">
+        <tr>
+            <th>Book Id</th>
+            <th>Book Title</th>
+            <th>Book Author</th>
+            <th>Book prize</th>
+            <!-- <th>Action</th> -->
+        </tr>
+        <% if(showing.length>0){ %>
+
+            <% for(i=0;i<showing.length;i++){ %>
+                    <tr>
+                        <th><%-showing[i].book_id%></th>
+                        <th><%-showing[i].book_title%></th>
+                        <th><%-showing[i].book_author%></th>
+                        <th><%-showing[i].book_prize%></th>
+                        <!-- <th> -->
+                            <!-- <a href="/delete_from_history?user_id=<%-showing[i].user_id%>&book_id=<%-showing[i].book_id%>">No Need</a> -->
+                        <!-- </th> -->
+                    </tr>
+            <% } %>
+
+        <% } else{ %>
+                <h1>Empty database</h1>
+            <% } %>
+        
+    </table>
+    
+    <div class="browse">
+        <form action="/bought?user_id=<%-showing[0].user_id%>" method="post">
+            <button>Browse More</button>
+        </form>
+    </div>
+    <div class="back">
+        <form action="/user"></form>
+    </div>
+</body>
+</html>

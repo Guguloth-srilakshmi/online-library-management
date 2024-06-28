@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Login</title>
+    <style type="text/css" rel="stylesheet">
+        body{
+            background-image:url("background_image.jpg");
+            background-size:cover;
+            background-position:center;
+            background-repeat: no-repeat;
+            height:400px;
+            
+            font-family: 'Brush Script MT', cursive;
+        
+    
+        }
+        .user{
+            text-align:center;
+            font-size:20px;
+            color:red;
+        }
+        .style_form{
+            background-color:aliceblue;
+            position:absolute;
+            top:56%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background:linear-gradient(-45deg,#7f379c,#ffa26c);
+            box-shadow:4px 4px 4px rgba(0,0,0,.3);
+            border-radius: 10px;
+            width:35%;
+        }
+        table{
+            color:black;
+        }
+        legend{
+            background-color:grey;
+            color:white;
+            padding:5px 10px;
+        }
+        fieldset{
+            margin:0%;
+            border:0%;
+        }
+        .style_form input{
+            width:200%;
+            border: 2px solid blue;
+            padding:6px 10px;
+            border-radius:5px;
+        }
+        .style_form button{
+            background-color: black;
+            padding:5px 15px;
+            color:white;
+            border-radius:5px;
+
+        }
+        .style_form a{
+            color:black;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="user">
+        <h1>USER LOGIN</h1>
+        <i class="fa-solid fa-user" style="font-size:100px;padding-left:10px;color:blue"></i><br>
+    </div>
+    <div class ="style_form">
+        <form action="after_user_login.ejs" method="post">
+           
+               
+                <table cellpadding="5" cellspacing="5">
+                    <tr>
+                        <th align="left">User name:</th>
+                       
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="user_id" placeholder="enter user name" required="required"></th>
+                    </tr>
+                    <tr>
+                        <th align="left">Password:</th>
+                        
+                    </tr>
+                    <tr>
+                        <th><input type="password" name="password" placeholder="enter password" required="required"></th>
+                    </tr>
+                    <tr>
+                        
+                        <th align="right"><button type="submit">login</button></th>
+                        <th> <a href="new_user_login.html">register?</a>
+                        </th>
+                    </tr>
+                </table>
+            
+        </form>
+    </div>
+</body>
+</html>

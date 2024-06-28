@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>welcome Admin</title>
+    <style type="text/css" rel="stylesheet">
+        body{
+            font-family:'Brush Script MT', cursive;
+            background-color: #E3E3E3;
+        }
+        h1{
+            font-size: 50px;
+            text-align: center;
+            color:red;
+            /*
+            padding:20px;
+            margin:30px;
+            background-color: aquamarine;
+            box-shadow:8px 8px 8px rgba(0,0,0,.3);
+            border-radius: 5px;*/
+        }
+        .add_books button{
+            position: absolute;
+            top:40%;
+            left:20%;
+            transform:translate(-50%,-50%);
+            background-color: whitesmoke;
+            color:black;
+            text-align: center;
+            font-size:20px;
+            padding:10px 10px;
+            box-shadow: 4px 4px 4px rgba(0,0,0,.2);
+            border-radius:5px;
+        }
+        .view_all button{
+            position:absolute;
+            top:40%;
+            left:40%;
+            transform:translate(-50%,-50%);
+            background-color: whitesmoke;
+            text-align: center;
+            font-size: 20px;
+            padding:10px 10px;
+            box-shadow: 4px 4px 4px rgba(0,0,0,.2);
+            border-radius:5px;
+
+        }
+        .orders button{
+            position:absolute;
+            top:40%;
+            left:60%;
+            transform:translate(-50%,-50%);
+            background-color: whitesmoke;
+            text-align: center;
+            font-size: 20px;
+            padding:10px 10px;
+            box-shadow: 4px 4px 4px rgba(0,0,0,.2);
+            border-radius:5px;
+        }
+        .home-button {
+            margin-top: 20px;
+            padding: 10px 10px;
+            font-size: 16px;
+            cursor: pointer;
+			border: none;
+			text-decoration: underline;
+        	background-color: powderblue;
+        }
+        .logout button{
+            position:absolute;
+            top:40%;
+            left:80%;
+            transform:translate(-50%,-50%);
+            background-color: whitesmoke;
+            text-align: center;
+            font-size: 20px;
+            padding:10px 10px;
+            box-shadow: 4px 4px 4px rgba(0,0,0,.2);
+            border-radius:5px;
+        }
+        .options{
+            border-radius: 10px;
+            border-color: black;
+            display: flex;
+
+        }
+        
+        
+    </style>
+</head>
+<body>
+        <button class="home-button" onclick="location.href='/'">HOME</button>
+        <h1>welcome <%-admin[0].admin_name%></h1>
+        
+        <div class="options">
+            <div class="add_books">
+                <form action="inserting_books.html">
+                    <button>Add books</button>
+                </form>
+            </div>
+            
+            <div class="view_all">
+                <form action="books.ejs">
+                    <button>View All</button>
+                </form>
+            </div>
+            <div class="orders">
+                <form action="orders.ejs">
+                    <button>View Orders</button>
+                </form>
+            </div>
+        </div>
+        <div class="logout">
+            <form action="/">
+                <button>Logout</button>
+            </form>
+        </div>
+</body>
+</html>

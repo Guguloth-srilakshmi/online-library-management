@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>new user</title>
+    <style type="text/css" rel="stylesheet">
+        body{
+            font-family:"Brush Script MT",cursive;
+           
+            background-image:url("new_user.jpg");
+            background-size:cover;
+            background-position:center;
+            background-repeat: no-repeat;
+            height:400px;
+        }
+        .head{
+           font-size:30px;
+            text-align: center;
+            color:red;
+            position:absolute;
+            top:20%;
+            left:77%;
+            transform: translate(-50%,-50%);
+        }
+        .new_user{
+            position:absolute;
+            top:65%;
+            left:80%;
+            transform: translate(-50%,-50%);
+            background:linear-gradient(-45deg,#7f379c,#ffa26c);
+            border-radius:5%;
+            box-shadow:8px 8px 8px rgba(0,0,0,.3);
+            width:35%;
+        }
+        .new_user input{
+            width:200%;
+            padding:5px 10px;
+            border-radius:5px;
+            border-color:blue;
+        }
+        .new_user button{
+            color:white;
+            background-color: green;
+            padding:5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>HIE ONE</h1>
+    </div>
+    <div class="new_user">
+        <form action="/register" method="post">
+            <table cellspacing="10" cellpadding="5">
+                <tr>
+                    <th align="left">user name:</th>
+                    
+                </tr>
+                <tr>
+                    <th><input type="text" name="user_id" placeholder="Enter user name" required></th>
+                </tr>
+                <tr>
+                    <th align="left">password:</th>
+                    
+                </tr>
+                <tr>
+                    <th><input type="password" name="password" id="password" placeholder="enter password" required></th>
+                </tr>
+                <tr>
+                    <th align="left">confirm password:</th>
+                    
+                </tr>
+                <tr>
+                    <th><input type="password" name="confirm" id="confirm_password" placeholder="confirm password" required></th>
+                </tr>
+                <tr>
+                    
+                    <th align="left"><button type="submit">register</button></th>
+                
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+    </script>
+</body>
+</html>

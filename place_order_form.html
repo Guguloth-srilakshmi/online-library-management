@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Placing Order</title>
+    <style type="text/css" rel="stylesheet">
+        body{
+            background-image:url("book_1.jpg");
+            background-size:cover;
+            background-position:center;
+            background-repeat: no-repeat;
+            height:400px;
+            
+            font-family: 'Brush Script MT', cursive;
+        
+    
+        }
+        .placing{
+            position: absolute;
+            top:60%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background:linear-gradient(-45deg,#7f379c,#ffa26c);
+            box-shadow: 8px 8px 8px rgba(0,0,0,.3);
+            border-radius: 10px;
+            width:34%;
+
+        }
+        .placing input{
+            width:200%;
+            padding:5px 10px;
+            border-radius: 5px;
+            border-color:blue;
+        }
+        .placing button{
+            background-color: green;
+            color:white;
+            padding:5px 10px;
+            border-radius: 5px;
+        }
+        .place{
+            font-size: 25px;
+            text-align:center;
+            color:black;
+            position: absolute;
+            top:28%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="place">
+        <h1>Order Placing</h1>
+    </div>
+    <div class="placing">
+        <form action="sending_to_orders" method="post">
+            <table cellpadding="8" cellspacing="8">
+                <tr>
+                    <th align="left">Book Name:</th>
+                    
+                </tr>
+                <tr>
+                    <th><input type="text" name="book_title" placeholder="Book Name here.."> </th>
+                </tr>
+                <tr>
+                    <th align="left">Book Author:</th>
+                    
+                </tr>
+                <tr>
+                    <th><input type="text" name="book_author" placeholder="Book Author here.."> </th>
+                </tr>
+                <tr>
+                    <th align="left"><button>place</button></th>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</body>
+</html>

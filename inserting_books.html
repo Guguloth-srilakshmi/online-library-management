@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Inserting into books</title>
+    <style type="text/css" rel="stylesheet">
+        body{
+				font-family:'Brush Script MT', cursive;
+                background-image: url("book.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height:400px;
+			}
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color:red;
+            position:absolute;
+            top:10%;
+            left:20%;
+            transform:translate(-50%,-50%);
+        }
+        .some{
+            position:absolute;
+            top:55%;
+            left:20%;
+            transform:translate(-50%,-50%);
+            /*  background-color: bisque; */
+            background:linear-gradient(-45deg,#7f379c,#ffa26c); 
+            box-shadow:4px 4px 4px rgba(0,0,0,.3);
+            border-radius: 10px;
+            width:32%;
+        }
+        .some input{
+            width:200%;
+            padding:3px 5px;
+            border-radius:5px;
+            border-color:blue;
+        }
+        .some button{
+            background-color:black;
+            color:white;
+            padding:4px 20px;
+            
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>ADD A BOOK</h1>
+    <div class="some">
+        <form action="/add_books" method="post">
+            <table cellpadding="5" cellspacing="5">
+                <tr>
+                    <th align="left">Book_Id:</th>
+
+                </tr>
+                <tr>
+                    <th><input type="text" id="book_id" name="book_id" placeholder="Book_id" required></th>
+                </tr>
+                <tr>
+                    <th align="left">Book_Title:</th>
+
+                </tr>
+                <tr>
+                    <th><input type="text" id="book_title" name="book_title" placeholder="Book Title" required></th>
+                </tr>
+                <tr>
+                    <th align="left">Book_Author:</th>
+                    
+                </tr>
+                <tr>
+                    <th><input type="text" id="book_author" name="book_author" placeholder="Book Author" required></th>
+                </tr>
+                <tr>
+                    <th align="left">Book_prize:</th>
+                    
+                </tr>
+                <tr>
+                    <th><input type="number" id="book_prize" name="book_prize" placeholder="Book Prize" required></th>
+                </tr>
+                <tr>
+                    <th align="left">Book_quantity:</th>
+                    
+                </tr>
+                <tr>
+                    <th><input type="number" id="book_quantity" name="book_quantity" placeholder="Book quantity" required></th>
+                </tr>
+                <tr>
+                   
+                    <th align="left"><button type="submit">Add</button></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+        <script>
+            const btn = document.getElementById('btn');
+
+            btn.addEventListener('click', function handleClick(event) {
+             // 👇️ if you are submitting a form
+                event.preventDefault();
+
+                const inputs = document.querySelectorAll('#book_title,#book_author,#book_prize,#book_quantity');
+
+                inputs.forEach(input => {
+                input.value = '';
+                });
+            });
+
+        </script>
+     
+</body>
+</html>

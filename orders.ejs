@@ -1,0 +1,159 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>displaying orders</title>
+    <style type="text/css" rel="stylesheet">
+        body{
+            font-family:"Brush Script MT",cursive;
+            background-color: #E3E3E3;
+        }
+        h1{
+            font-size: 50px;
+            text-align:center;
+            color:red
+        }
+    </style>
+</head>
+<body>
+    <h1>ORDERS</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th align="center" >Book Title</th>
+            <th align="center">Book Author</th>
+            <th align="center">Action</th>
+        </tr>
+        <% if(orders.length>0){ %>
+                <% for(i=0;i<orders.length;i++){ %>
+                    <tr>
+                        <td>hii</td>
+                        <td align="center"><%- orders[i].book_title%> </td>
+                        <td align="center"><%- orders[i].book_author%> </td>
+                        <td align="center"><a href="#" style="color:red">Confirm</a></td>
+                    </tr>
+                <% } %>
+        <% }else{ %>
+        
+            <% }%>
+    </table>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Displaying Orders</title>
+    <style type="text/css" rel="stylesheet">
+        body {
+            font-family: "Brush Script MT", cursive;
+            background-color: #E3E3E3;
+        }
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            color: red;
+        }
+        .confirm-button {
+            color: red;
+        }
+        .confirm-button.confirmed {
+            color: green;
+        }
+    </style>
+    <script>
+        function confirmOrder(button) {
+            button.textContent = 'Admin has confirmed this order';
+            button.style.color = 'green';
+            button.onclick = null; // Disable further clicks
+        }
+    </script>
+</head>
+<body>
+    <h1>ORDERS</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th align="center">Book Title</th>
+            <th align="center">Book Author</th>
+            <th align="center">Action</th>
+        </tr>
+        <% if(orders.length > 0) { %>
+            <% for(var i = 0; i < orders.length; i++) { %>
+                <tr>
+                    <td align="center"><%- orders[i].Book_title %></td>
+                    <td align="center"><%- orders[i].Book_Author %></td>
+                    <td align="center">
+                        <a href="javascript:void(0);" class="confirm-button" onclick="confirmOrder(this)">Confirm</a>
+                    </td>
+                </tr>
+            <% } %>
+        <% } %>
+    </table>
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Displaying Orders</title>
+    <style>
+        body {
+            font-family: "Brush Script MT", cursive;
+            background-color: #E3E3E3;
+        }
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            color: red;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            background-color: #ffffff;
+        }
+        a {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>ORDERS</h1>
+    <table>
+        <tr>
+            <th>Book Title</th>
+            <th>Book Author</th>
+            <th>Action</th>
+        </tr>
+        <% if (orders.length > 0) { %>
+            <% orders.forEach(function(order) { %>
+                <tr>
+                    <td><%- order.Book_title %></td>
+                    <td><%- order.Book_Author %></td>
+                   <!-- <td><a href="#" style="color: red;">Confirm</a></td>
+                    <td>
+                        <form action="/confirm_order" method="POST">
+                            <input type="hidden" name="book_title" value="<%- order.Book_title %>">
+                            <input type="hidden" name="book_author" value="<%- order.Book_Author %>">
+                            <button type="submit">Confirm</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        <% } else { %>
+            <tr>
+                <td colspan="3">No orders found</td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>-->

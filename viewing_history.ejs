@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Viewing Books</title>
+    <style type="text/css">
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            padding: 20px;
+            margin: 10px;
+            background-color: aqua;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: darkgreen;
+            color: white;
+        }
+        table th,
+        table td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        .row {
+            color: yellow;
+            font-size: 20px;
+        }
+        table th a {
+            color: orange;
+        }
+        .some button {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: darkgreen;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .some button:hover {
+            background-color: hotpink;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/after_user_login"> Back</a> 
+    </nav>
+    <h1>Your History </h1>
+    <table border="1" cellpadding="5">
+        <tr class="row">
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Book ID</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Action</th>
+        </tr>
+        <% if (some.length > 0) { %>
+            <% for (let i = 0; i < some.length; i++) { %>
+                <tr>
+                    <td><%- some[i].id %></td>
+                    <td><%- some[i].user_id %></td>
+                    <td><%- some[i].book_id %></td>
+                    <td><%- some[i].borrow_date %></td>
+                    <td><%- some[i].book_quantity %></td>
+                    <td><a href="/selecting_book?book_id=<%=some[i].book_id%>">Return</a></td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td colspan="6" align="center">Data not found</td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

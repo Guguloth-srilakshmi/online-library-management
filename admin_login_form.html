@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Login</title>
+    <style type="text/css" rel="stylesheet">
+        body{
+            background-image:url("admin_login.jpg");
+            background-position:center;
+            background-size:cover;
+            background-repeat: no-repeat;
+            height:400px;
+            
+        }
+        .admin{
+            text-align:center;
+            font-size:20px;
+            color:red;
+            
+           
+        }
+        .container{
+            background:linear-gradient(-45deg,#7f379c,#ffa26c);
+            position:absolute;
+            left:50%;
+            top:60%;
+            transform:translate(-50%,-50%);
+            border-radius:5px;
+            box-shadow:4px 4px 4px rgba(200,200,200,.3);
+            width:35%;
+
+        }
+        .container button{
+            background-color: green;
+            color:white;
+            padding:5px 20px;
+            border-radius: 10px;
+        }
+        .container input{
+           width:200%;
+           padding:6px 10px;
+           border-radius:5px;
+           border-color:blue;
+        }
+        body {
+            font-family: 'Brush Script MT', cursive;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="admin">
+    <h1>ADMIN LOGIN</h1>
+    <i class="fa-solid fa-user-gear" style="font-size:100px;color:white"></i><br>
+    </div>
+    <div class="container">
+        <form action="after_admin_login.html" method="post">
+            <table cellspacing="5" cellpadding="5">
+                
+                <tr>
+                    <td align="left">Admin name:</td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="text" name="admin_name" placeholder="enter admin name" required></td>
+                </tr>
+                <tr>
+                    <td align="left">Admin password:</td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="password" placeholder="enter password" required></td>
+                </tr>
+                <tr>
+                    <td align="left"><button type="submit" > Login</button></td>
+                    
+                    
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

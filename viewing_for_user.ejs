@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--<html lang="en">
+<head>
+    
+    <title>viewing books</title>
+    <style type="text/css" rel="stylesheet">
+        h1{
+            text-align: center;
+            font-size:30px;
+        }
+        .some button{
+            position:absolute;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color: darkgreen;
+            color:white;
+            padding:10px;
+            border-radius: 10px;
+
+        }
+        .some button:hover{
+            background-color: hotpink;
+            color:white;
+        }
+        table{
+            background-color: darkgreen;
+            color:white;
+            
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+            padding:20px;
+            margin:10px;
+            background-color: aqua;
+        }
+        table tr.row{
+            color:yellow;
+            font-size: 20px;
+        }
+        table tr th a{
+            color:orange;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>AVAILABLE BOOKS</h1>
+    <table border="1" width="100%" cellpadding="5">
+        <tr class="row">
+            <th align="center">Book_Id</th>
+            <th align="center">Book_Title</th>
+            <th align="center">Book_Author</th>
+            <th align="center">Book_Prize</th>
+            <th align="center">Book_Quantity</th>
+            <th align="center">Action</th>
+
+        </tr>
+        <% if(some.length>0) {%>
+            <% for(i=0;i<some.length;i++){ %>
+                <tr>
+                    <th align="left"><%-some[i].book_id %></th>
+                    <th align="left"><%-some[i].book_title%></th>
+                    <th align="left"><%-some[i].book_author%></th>
+                    <th align="left"><%-some[i].book_prize%></th>
+                  //  <th align="left"><%-some[i].book_quantity%></th>
+                    <th align="left"><a href="/selecting_particular?book_id=<%-some[0].book_id%>">select</a></th>
+                    
+
+                </tr>
+                <% } %>
+        <% }else{ %>
+            <h1>data not found</h1>
+        <% } %>
+    </table>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Viewing Books</title>
+    <style type="text/css">
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            padding: 20px;
+            margin: 10px;
+            background-color: aqua;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: darkgreen;
+            color: white;
+        }
+        table th,
+        table td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        .row {
+            color: yellow;
+            font-size: 20px;
+        }
+        table th a {
+            color: orange;
+        }
+        .some button {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: darkgreen;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .some button:hover {
+            background-color: hotpink;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/after_user_login"> Back</a> 
+    </nav>
+    <h1>AVAILABLE BOOKS  </h1>
+    <table border="1" cellpadding="5">
+        <tr class="row">
+            <th>Book_Id</th>
+            <th>Book_Title</th>
+            <th>Book_Author</th>
+            <th>Book_Prize</th>
+            <th>Book_Quantity</th>
+            <th>Action</th>
+        </tr>
+        <% if (some.length > 0) { %>
+            <% for (let i = 0; i < some.length; i++) { %>
+                <tr>
+                    <td><%- some[i].book_id %></td>
+                    <td><%- some[i].book_title %></td>
+                    <td><%- some[i].book_author %></td>
+                    <td><%- some[i].book_prize %></td>
+                    <td><%- some[i].book_quantity >= 0 ? some[i].book_quantity : 0 %></td>
+                    <td>
+                        <% if (some[i].book_quantity > 0) { %>
+                            <a href="/selecting_book?book_id=<%=some[i].book_id%>">Select</a>
+                        <% } else { %>
+                            Out of Stock
+                        <% } %>
+                    </td>
+                   
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td colspan="6" align="center">Data not found</td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

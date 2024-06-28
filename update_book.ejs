@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>updating</title>
+    <style type="text/css" rel="stylesheet">
+        h1{
+            text-align: center;
+            font-size: 50px;
+        }
+        .some{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color: bisque;
+            box-shadow:4px 4px 4px rgba(0,0,0,.3);
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>UPDATING THE SELECTED ONE</h1>
+    <div class="some">
+        <form action="" method="post">
+            <table cellpadding="10" cellspacing="10">
+                <tr>
+                    <th><input type="hidden" name="book_id" value="<%=updating[0].book_id%>"  </th>
+                </tr>
+                <tr>
+                    <th>Book_Title:</th>
+                    <th><input type="text" id="book_title" name="book_title" value="<%=updating[0].book_title %>" placeholder="Book Title" required></th>
+
+                </tr>
+                <tr>
+                    <th>Book_Author:</th>
+                    <th><input type="text" id="book_author" name="book_author" value="<%=updating[0].book_author %>" placeholder="Book Author" required></th>
+                </tr>
+                <tr>
+                    <th>Book_prize:</th>
+                    <th><input type="number" id="book_prize" name="book_prize" value="<%=updating[0].book_prize %>" placeholder="Book Prize" required></th>
+                </tr>
+                <tr>
+                    <th>Book_quantity:</th>
+                    <th><input type="number" id="book_quantity" name="book_quantity" value="<%=updating[0].book_quantity %>"   placeholder="Book quantity" required></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th align="center"><button type="submit">Update</button></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+        <script>
+            const btn = document.getElementById('btn');
+
+            btn.addEventListener('click', function handleClick(event) {
+             // 👇️ if you are submitting a form
+                event.preventDefault();
+
+                const inputs = document.querySelectorAll('#book_title,#book_author,#book_prize,#book_quantity');
+
+                inputs.forEach(input => {
+                input.value = '';
+                });
+            });
+
+        </script>
+     
+</body>
+</html>

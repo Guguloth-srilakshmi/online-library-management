@@ -1,0 +1,140 @@
+<doctype html>
+<html>
+<head>
+	<title>after_user_login</title>
+	<style>
+
+			body{
+				font-family:'Brush Script MT', cursive;
+			}
+			.home-button {
+            margin-top: 20px;
+            padding: 10px 10px;
+            font-size: 16px;
+            cursor: pointer;
+						border: none;
+						text-decoration: underline;
+						background-color: powderblue;
+        }
+			.pro{
+				width: 33%;
+				
+				background-color:bisque;
+				
+				
+				position: absolute;
+				top: 60%;
+                left: 52%;
+                transform: translate(-50%, -50%);
+				box-shadow:4px 4px 4px rgba(200,100,200,.3);
+				border-radius:10px;
+			}
+			nav{
+				background: powderblue;
+				height: 75px;
+				width: 100%;
+			}
+			nav ul{
+				float: right;
+				margin-right: 55px;
+			}
+			nav ul li{
+				display: inline-block;
+				line-height: 70px;
+				margin: 0 5px;
+				font-style: italic;
+				font-size: 20px;
+				padding: 7px ;
+			}
+			nav ul li a{
+				color:black;
+				font-size: 17px;
+				text-transform: uppercase;
+			}
+
+			.pro input{
+				width:200%;
+				padding:6px 10px;
+				border-color:blue;
+				border-radius: 5px;
+			
+			}
+			.pro button{
+				background-color: black;
+				color:white;
+				padding:5px 10px;
+				border-radius:5px;
+			}
+			
+			lable.some{
+				padding:0 100px;
+				font-size:50px;
+				font-weight:bold;
+				line-height:80px;
+			}
+			h1{
+				position:absolute;
+				left:35%;
+				font-size:50px;
+			}
+
+		</style>
+</head>
+	<body>
+		
+		<nav>
+			<button class="home-button" onclick="location.href='/'">HOME</button>
+			<lable class="some">library</lable>
+			<ul>
+				<li><a class="ab" href="/history"><italic>history</italic></a></li>
+				<li> <a href="/profile">Profile</a></li>
+				<li><a href="/feedback_form">Feedback</a></li>
+				<!--<li><a class="bc"href="#">feedback</a></li>
+				<li><a class="cd"href="#">profile</a></li>-->
+				<li><a class="de"href="logged_out.html">logout</a></li>
+			</ul>
+		</nav>
+		
+                <h1>Welcome  <%= user.user_id%> </h1>
+            
+		<div class="pro">
+			<form action="viewing_book.ejs" method="post">
+				<table cellspacing="8" cellpadding="8">
+					<tr>
+						<th align="left">Book Name:</th>
+						
+					</tr>
+					<tr>
+						<th><input type="text" name="book_title" id="book_title" placeholder="Book Name" required></th>
+					</tr>
+					<tr>
+						<th align="left">Book Author:</th>
+						
+					</tr>
+					<tr>
+						<th><input type="text" name="book_author" id="book_author" placeholder="Book Author" required></th>
+					</tr>
+					<tr>
+						
+						<th align="left">
+							
+							<button id="btn" align="left">search</button>
+							<a href="/viewing_for_user">View Books</a>
+							
+						</th>
+						
+						
+					</tr>
+				</table>
+				
+			</form>
+			
+		</div>
+		
+		<script>
+			
+		</script>
+
+	</body>
+
+</html>
